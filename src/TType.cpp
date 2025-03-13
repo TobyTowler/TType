@@ -1,4 +1,3 @@
-#include "include/TType.h"
 #include "chrono"
 #include "include/Colours.h"
 #include "include/Printer.h"
@@ -145,6 +144,9 @@ void TType::runTimeTrial() {
             started = true;
         }
         if (input.size() == size(words)) {
+            auto end = std::chrono::steady_clock::now();
+            std::chrono::duration<double> time = (end - start);
+            runTime = time.count();
             break;
         }
     } while (std::chrono::steady_clock::now() - start < chrono::seconds(int(runTime)));
@@ -246,7 +248,6 @@ void TType::setRandomWords(string fileName) {
     randomWorded = true;
     words.clear();
 
-    // convert string to array
     vector<string> wordsArray;
     stringstream ss(readFile(fileName));
     string tmp;

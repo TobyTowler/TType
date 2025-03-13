@@ -14,10 +14,15 @@
 
 ## ToDo
 - leaderboard
-- fix timetrailWPM
 - CMAKE install
+- 
 
 # Releases
+
+##
+ V1.8
+- Creatable text files
+
 ## V1.7
 - Words are re-randomised on game reset
 - TimeTrial mode added

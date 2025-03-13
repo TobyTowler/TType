@@ -23,7 +23,7 @@ void printTitle() {
            "       \\/_/    \\/_/`/___/> \\ \\ \\/  \\/____/ \n"
            "                      /\\___/\\ \\_\\          \n"
            "                      \\/__/  \\/_/          \n\n"
-           "\n\n");
+           "\n");
 
     attroff(COLOR_PAIR(NcursesColors::TITLEPAIR));
 }
