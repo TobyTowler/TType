@@ -83,33 +83,24 @@ TType::TType() {
 }
 
 void TType::run() {
-
     bool started = false;
-    int length = 0; // holds the line length
+    quit = false;
 
     chrono::steady_clock::time_point start;
 
-    for (int i = 0; i < size(words); i++) {
+    do {
         checkChar();
-        ch = getch();
+        getInput();
 
         if (!started) {
             start = std::chrono::steady_clock::now();
             started = true;
         }
 
-        input.push_back(ch);
-        // addToInput(ch);
-
-        if (ch == KEY_BACKSPACE) {
-            if (i > 0)
-                i -= 2;
-            else
-                i--;
-            input.pop_back();
-            input.resize(i + 1);
+        if (input.size() == words.size()) {
+            break;
         }
-    }
+    } while (!quit);
 
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> time = (end - start);
@@ -120,34 +111,40 @@ void TType::run() {
     printSettings(*this);
 }
 
+void TType::getInput() {
+    ch = getch();
+
+    input.push_back(ch);
+
+    if (ch == KEY_BACKSPACE) {
+        input.pop_back();
+        input.pop_back();
+
+    } else if (ch == 10) {
+        quit = true;
+    }
+}
+
 void TType::runTimeTrial() {
 
+    quit = false;
     bool started = false;
     int length = 0; // holds the line length
-    int i = 0;
     runTime = 5;
     chrono::steady_clock::time_point start;
 
     do {
+        if (quit) {
+            break;
+        }
+        checkChar();
+        getInput();
+
         if (!started) {
             start = std::chrono::steady_clock::now();
             started = true;
         }
-        checkChar();
-        ch = getch();
-        i++;
-
-        input.push_back(ch);
-
-        if (ch == KEY_BACKSPACE) {
-            if (i > 0)
-                i -= 2;
-            else
-                i--;
-            input.pop_back();
-            input.resize(i + 1);
-        }
-        if (i + 1 > size(words)) {
+        if (input.size() == size(words)) {
             break;
         }
     } while (std::chrono::steady_clock::now() - start < chrono::seconds(int(runTime)));

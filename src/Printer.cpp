@@ -23,7 +23,7 @@ void printTitle() {
            "       \\/_/    \\/_/`/___/> \\ \\ \\/  \\/____/ \n"
            "                      /\\___/\\ \\_\\          \n"
            "                      \\/__/  \\/_/          \n\n"
-           "              Press To Start\n\n");
+           "\n\n");
 
     attroff(COLOR_PAIR(NcursesColors::TITLEPAIR));
 }
@@ -40,7 +40,8 @@ void printSettings(TType &obj) {
     printw(" 2. Play time trial \n");
     printw(" 3. Change text file \n");
     printw(" 4. Change text to random words from a file\n");
-    printw(" 5. Title screen\n");
+    printw(" 5. Create new text file\n");
+    printw(" 6. Title screen\n");
     attroff(COLOR_PAIR(NcursesColors::SUBPAIR));
 
     attron(COLOR_PAIR(NcursesColors::TITLEPAIR));
@@ -76,6 +77,11 @@ void printSettings(TType &obj) {
         }
 
         if (cha == '5') {
+            createFile(obj);
+            break;
+        }
+
+        if (cha == '6') {
             callTitle(obj);
             break;
         }

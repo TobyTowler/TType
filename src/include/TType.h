@@ -8,15 +8,16 @@ using namespace std;
 class TType {
   private:
     string words;
-    vector<int> input;
-    int ch;
     double runTime;
     int numberOfCorrectWords;
     bool randomWorded;
+    int ch;
 
   public:
+    vector<int> input;
     string inputFile;
     bool timeTrial;
+    bool quit = false;
 
     TType();
 
@@ -25,6 +26,8 @@ class TType {
     void clearInput();
 
     void checkChar();
+
+    void getInput();
 
     void run();
 

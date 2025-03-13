@@ -1,6 +1,9 @@
 #include "include/fileSelector.h"
 #include "include/Colours.h"
+#include "include/Printer.h"
 #include <filesystem>
+#include <fstream>
+#include <iterator>
 #include <ncurses.h>
 #include <vector>
 
@@ -59,4 +62,42 @@ string fileSelector(string path) {
     }
 
     return files[selected];
+}
+
+void createFile(TType &obj) {
+    clear();
+
+    obj.quit = false;
+    obj.input.clear();
+
+    while (!obj.quit) {
+        clear();
+        printw("ENTER TITLE: \n");
+        for (auto c : obj.input) {
+            printw("%c", c);
+        }
+
+        printw("\n\nENTER to continue");
+        obj.getInput();
+    }
+
+    string fileName(obj.input.begin(), obj.input.end());
+    obj.input.clear();
+
+    obj.quit = false;
+    while (!obj.quit) {
+        clear();
+        printw("ENTER CONTENT: \n");
+        for (auto c : obj.input) {
+            printw("%c", c);
+        }
+        printw("\n\nENTER to continue");
+        obj.getInput();
+    }
+
+    ofstream file("./../text/" + fileName + ".txt");
+    string line(obj.input.begin(), obj.input.end());
+    file << line;
+    file.close();
+    callTitle(obj);
 }
