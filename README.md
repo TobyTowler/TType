@@ -1,24 +1,42 @@
 # TType - Rebuilt to be object-oriented
 
 # About 
-- my first large unguided project 
-- very open to any advice
+- TUI typing game
+    * Timed mode
+    * finish text mode
 - can use any .txt file where:
     - file is in text directory
-    - all text is on the first line of the file
       
-# Notes
 ## Requirements
 - nCurses library
 - C++ compiler
 
+## Build
+```bash
+git clone git@github.com:TobyTowler/TType.git
+cd TType/
+mkdir build
+cd build
+cmake ..
+make
+./TType
+```
+
 ## ToDo
 - leaderboard
 - CMAKE install
-- 
+
+# ScreenShots
+### Title
+![Title](./media/Title.png "Title")
+
+### Changing file
+![input editor](./media/ChangeFile.png "File change")
+
+### Playing/Score
+![Score](./media/Score.png "Score")
 
 # Releases
-
 ## V1.8
 - Creatable text files
 
@@ -68,12 +86,3 @@
 - rebuilt to be object/class based and have better modularity
 
 
-# ScreenShots
-### Title
-![Title](./media/Title.png "Title")
-
-### Changing file
-![input editor](./media/ChangeFile.png "File change")
-
-### Playing/Score
-![Score](./media/Score.png "Score")
