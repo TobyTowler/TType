@@ -120,6 +120,7 @@ void TType::getInput() {
         input.pop_back();
 
     } else if (ch == 10) {
+        input.pop_back();
         quit = true;
     }
 }

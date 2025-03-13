@@ -19,8 +19,7 @@
 
 # Releases
 
-##
- V1.8
+## V1.8
 - Creatable text files
 
 ## V1.7
