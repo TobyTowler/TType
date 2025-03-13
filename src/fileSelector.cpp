@@ -1,6 +1,6 @@
-#include "include/fileSelector.h"
-#include "include/Colours.h"
-#include "include/Printer.h"
+#include "fileSelector.h"
+#include "Colours.h"
+#include "Printer.h"
 #include <filesystem>
 #include <fstream>
 #include <iterator>

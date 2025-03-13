@@ -1,6 +1,6 @@
-#include "include/Printer.h"
-#include "include/TType.h"
-#include "include/nCursesConfig.h"
+#include "Printer.h"
+#include "TType.h"
+#include "nCursesConfig.h"
 
 int main() {
     nCursesCFG();

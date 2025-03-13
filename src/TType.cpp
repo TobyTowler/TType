@@ -1,6 +1,6 @@
+#include "Colours.h"
+#include "Printer.h"
 #include "chrono"
-#include "include/Colours.h"
-#include "include/Printer.h"
 #include "ncurses.h"
 #include <chrono>
 #include <cstdlib>

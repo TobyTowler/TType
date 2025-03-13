@@ -3,11 +3,13 @@ project(TType)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 find_package(Curses REQUIRED)
 find_package(Threads)
 
 # Include directories (Make headers accessible)
-include_directories(${PROJECT_SOURCE_DIR}/src/include)
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Collect all source files
 file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
@@ -18,7 +20,6 @@ add_executable(TType ${SRC_FILES})
 target_link_libraries(TType PRIVATE ${CURSES_LIBRARIES} Threads::Threads)
 
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Install to /usr/local/bin (Linux/macOS) or C:\Program Files (Windows)
 install(TARGETS TType DESTINATION /usr/local/bin)

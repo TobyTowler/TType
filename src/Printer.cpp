@@ -1,7 +1,7 @@
-#include "include/Printer.h"
-#include "include/Colours.h"
-#include "include/TType.h"
-#include "include/fileSelector.h"
+#include "Printer.h"
+#include "Colours.h"
+#include "TType.h"
+#include "fileSelector.h"
 #include <ncurses.h>
 
 using namespace std;
