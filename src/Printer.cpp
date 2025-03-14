@@ -67,7 +67,7 @@ void printSettings(TType &obj) {
         if (cha == '3') {
             obj.setWords(fileSelector("./../text/"));
             callTitle(obj);
-            break;
+            // break;
         }
 
         if (cha == '4') {
@@ -82,13 +82,14 @@ void printSettings(TType &obj) {
         }
 
         if (cha == '6') {
-            callTitle(obj);
+            // callTitle(obj);
             break;
         }
     }
 }
 
 void callTitle(TType &obj) {
+    // clear();
     printTitle();
     printSettings(obj);
 }

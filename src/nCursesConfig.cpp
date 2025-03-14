@@ -28,6 +28,6 @@ void nCursesCFG() {
 
     // Set the border around the window
     box(win, 0, 0);
-    NcursesColors::initCustomColor();
-    NcursesColors::initColorPairs();
+    NcursesColors::init_catppuccin_colors();
+    // NcursesColors::();
 }

@@ -25,6 +25,8 @@ make
 ## ToDo
 - leaderboard
 - CMAKE install
+- get rid of non timed mode
+- add difficulty levels
 
 # ScreenShots
 ### Title

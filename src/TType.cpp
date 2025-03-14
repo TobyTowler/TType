@@ -113,16 +113,12 @@ void TType::run() {
 void TType::getInput() {
     ch = getch();
 
-    input.push_back(ch);
-
     if (ch == KEY_BACKSPACE) {
         input.pop_back();
-        input.pop_back();
-
     } else if (ch == 10) {
-        input.pop_back();
         quit = true;
-    }
+    } else
+        input.push_back(ch);
 }
 
 void TType::runTimeTrial() {
@@ -249,18 +245,18 @@ void TType::setRandomWords(string fileName) {
     randomWorded = true;
     words.clear();
 
-    vector<string> wordsArray;
+    vector<string> wordsVec;
     stringstream ss(readFile(fileName));
     string tmp;
     while (std::getline(ss, tmp, ' ')) {
-        wordsArray.push_back(tmp);
+        wordsVec.push_back(tmp);
     }
 
     // select words
     int wordLimit;
 
     if (timeTrial) {
-        // wordLimit = wordsArray.size();
+        // wordLimit = wordsVec.size();
         wordLimit = 3;
     } else {
         wordLimit = 5;
@@ -268,8 +264,8 @@ void TType::setRandomWords(string fileName) {
 
     srand(time(NULL));
     for (int i = 0; i < wordLimit; i++) {
-        int num = rand() % wordsArray.size();
-        words.append(wordsArray[num] + " ");
+        int num = rand() % wordsVec.size();
+        words.append(wordsVec[num] + " ");
     }
     words.pop_back();
 }
