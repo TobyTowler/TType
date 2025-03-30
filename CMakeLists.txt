@@ -22,5 +22,6 @@ target_link_libraries(TType PRIVATE ${CURSES_LIBRARIES} Threads::Threads)
 
 
 # Install to /usr/local/bin (Linux/macOS) or C:\Program Files (Windows)
-install(TARGETS TType DESTINATION /usr/local/bin)
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/text/ DESTINATION /usr/local/share/TType/text FILES_MATCHING PATTERN "*")
+# install(TARGETS TType DESTINATION /usr/local/bin)
+# install(DIRECTORY ${PROJECT_SOURCE_DIR}/text/ DESTINATION /usr/local/share/TType FILES_MATCHING PATTERN "*")nstall(DIRECTORY text/ DESTINATION /usr/local/share/TType)install(DIRECTORY ${PROJECT_SOURCE_DIR}/text/ DESTINATION /usr/local/share/TType FILES_MATCHING PATTERN "*")nstall(DIRECTORY text/ DESTINATION /usr/local/share/TType)
+# install(DIRECTORY ${PROJECT_SOURCE_DIR}/text/ DESTINATION /usr/local/share/TType FILES_MATCHING PATTERN "*")

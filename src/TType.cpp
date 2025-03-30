@@ -7,8 +7,6 @@
 #include <fstream>
 #include <map>
 #include <sstream>
-#include <string>
-#include <vector>
 
 void TType::setWords(string fileName) {
     randomWorded = false;
@@ -214,6 +212,9 @@ void TType::checkCharAndRealWPM() {
 
 void TType::resetGame() {
     input.clear();
+    if (randomWorded) {
+        setRandomWords(inputFile);
+    }
     numberOfCorrectWords = 0;
 }
 
